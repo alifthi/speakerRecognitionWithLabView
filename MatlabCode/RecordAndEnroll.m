@@ -9,4 +9,8 @@ while toc<=(t+1)
     disp('.');
 end
 recData = getaudiodata(rec);
-
+%% loading model from directory
+fname = 'ivec-english-16kHz.zip';
+tmpDir = '../Model/';
+zipFile = fullfile(tmpDir,fname);
+unzip(zipFile,tempdir);
