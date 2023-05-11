@@ -1,6 +1,6 @@
 %% readAudio
 f = 16e3;
-t=2
+t=2;
 rec = audiorecorder(f,8,1);
 record(rec,t);
 disp('recording...');

@@ -8,10 +8,12 @@ try
         recordStarted = 1;
     end
 catch
-    f = 16e3;
-    rec = audiorecorder(f,8,1);
-    record(rec);
-    recordStarted = 1;
+    if start == 1
+        f = 16e3;
+        rec = audiorecorder(f,8,1);
+        record(rec);
+        recordStarted = 1;
+    end
 end
 try
     if start ==0 & recordStarted == 1
