@@ -1,12 +1,22 @@
 %% readAudio
-f = 16e3;
-rec = audiorecorder(f,8,1);
-record(rec);
-disp('recording...');
-tic;
-while start
-    pause(1);
-    disp('.');
+stopRecording = 0;
+try
+    if start == 1 & ~(recordStarted == 1)
+        f = 16e3;
+        rec = audiorecorder(f,8,1);
+        record(rec);
+        recordStarted = 1;
+    end
+catch
+    f = 16e3;
+    rec = audiorecorder(f,8,1);
+    record(rec);
+    recordStarted = 1;
 end
-stop(rec)
-recData = getaudiodata(rec);
+try
+    if start ==0 & recordStarted == 1
+        stop(rec)
+        recData = getaudiodata(rec);
+        stopRecording = 1;
+    end
+end
