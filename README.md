@@ -1,4 +1,4 @@
-# speakerRecognitionWithLabView
+# speakerVerificationWithLabView
 
 In this project i make a audio password checker using labview
 
